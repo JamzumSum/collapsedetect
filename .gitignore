@@ -1,0 +1,7 @@
+.vscode
+poetry.lock
+poetry.toml
+*.env
+
+__pycache__
+*.pyc
