@@ -18,6 +18,15 @@ _max_energy_t = ts_trace(_max_energy, torch.rand((2, 3), dtype=torch.float32))
 def is_collapse(*tensors: T, eps: float = 1e-5) -> bool:
     """Detect if the given tensors are collapsed. Requires more than one 1D tensor,
     or 2D tensors with the first dimension greater than 1.
+
+    :param tensors: tensors to be detected. Can be either 1D or 2D. All tensors are unsquashed to 2D (if needed) and are concatenated to a tensor of [N, D], which N > 1.
+    :param eps: The result max energy will be compared with this value.
+    :return: whether input tensors are collapsed.
+
+    >>> is_collapse(torch.ones((2, 3), dtype=torch.float32))
+    True
+    >>> is_collapse(torch.randn((3,)), torch.randn((3,)))
+    False
     """
     tsrs = []
     for i in tensors:

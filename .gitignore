@@ -5,3 +5,6 @@ poetry.toml
 
 __pycache__
 *.pyc
+
+docs/*
+!docs/source
