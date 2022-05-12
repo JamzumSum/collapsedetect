@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Detectors &#8212; collapsedetect 0.1.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Core API" href="core.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">collapsedetect</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="core.html">
+  Core API
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Detectors
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://github.com/JamzumSum/collapsedetect/">GitHub<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-collapsedetect.detector">
+<span id="detectors"></span><h1>Detectors<a class="headerlink" href="#module-collapsedetect.detector" title="Permalink to this headline">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collapsedetect.detector.</span></span><span class="sig-name descname"><span class="pre">CollapseDetector</span></span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector" title="Permalink to this definition">#</a></dt>
+<dd><p>Basic collapse detector.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.append" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the data into the store of the detector. Use <a class="reference external" href="https://pytorch.org/docs/stable/backends.html#clear" title="(in PyTorch v1.11.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a> to clear all saved data.
+Use <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.detect" title="collapsedetect.detector.CollapseDetector.detect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detect</span></code></a> to call <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code> on saved data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – data to be saved</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.detect">
+<span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.detect" title="Permalink to this definition">#</a></dt>
+<dd><p>Call <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code> on the saved data. This will clear the <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eps</strong> – as that in <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code>.</p></li>
+<li><p><strong>clear</strong> – whether to clear the <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> after detection, defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>whether saved data is collapse.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.hook">
+<span class="sig-name descname"><span class="pre">hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.hook" title="Permalink to this definition">#</a></dt>
+<dd><p>Add hook for a <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v1.11.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a>, so that its input/output will be appended into
+<a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> automatically. Hooks can be removed by <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.rm_hook" title="collapsedetect.detector.CollapseDetector.rm_hook"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rm_hook()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mod</strong> – module to be registered</p></li>
+<li><p><strong>pre</strong> – True to register <code class="docutils literal notranslate"><span class="pre">forward_pre_hook</span></code>, else <code class="docutils literal notranslate"><span class="pre">forward_hook</span></code></p></li>
+<li><p><strong>filter_fn</strong> – a getter to the target tensor, given the input(pre=True) or output(pre=False) of a module.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Hooks are binded to one detector instance. Means one detector can only register one module. You may
+instantiate another detector or remove current hook if you want to hook another module.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_pre_hook" title="(in PyTorch v1.11.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch.nn.Module.register_forward_pre_hook()</span></code></a>
+<a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook" title="(in PyTorch v1.11.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch.nn.Module.register_forward_hook()</span></code></a></p>
+</div>
+<p>Example1:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">resnet</span> <span class="o">=</span> <span class="n">get_resnet18</span><span class="p">()</span>     <span class="c1"># This is a module with single output</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span> <span class="o">=</span> <span class="n">CollapseDetector</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">hook</span><span class="p">(</span><span class="n">resnet</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span> <span class="n">resnet</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">detect</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Example2: pre=True</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">trainer</span> <span class="o">=</span> <span class="n">get_trainer</span><span class="p">()</span>     <span class="c1"># This is a trainer with network and loss module</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trainer</span><span class="o">.</span><span class="n">criterion</span>           <span class="c1"># This is a module with single input</span>
+<span class="go">mybug.TripletLoss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span> <span class="o">=</span> <span class="n">CollapseDetector</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">hook</span><span class="p">(</span><span class="n">trainer</span><span class="o">.</span><span class="n">criterion</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># Hook the input value, without caring where the input comes from</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">rm_hook</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Example3: usage of <cite>filter_fn</cite></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">net</span> <span class="o">=</span> <span class="n">get_pair_net</span><span class="p">()</span>     <span class="c1"># This is a module that return two value: &lt;vector, label&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">net</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>          <span class="c1"># will return a tuple with two value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span> <span class="o">=</span> <span class="n">CollapseDetector</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">hook</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">filter_fn</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>     <span class="c1"># filter_fn is a getter that unpacks the pair and returns the first part</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">rm_hook</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.rm_hook">
+<span class="sig-name descname"><span class="pre">rm_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.rm_hook" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove hook registered by <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.hook" title="collapsedetect.detector.CollapseDetector.hook"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hook()</span></code></a>. You must remove the existing hook
+before you register a new hook using the same detector.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.store">
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.store" title="Permalink to this definition">#</a></dt>
+<dd><p>data store</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseVisualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collapsedetect.detector.</span></span><span class="sig-name descname"><span class="pre">CollapseVisualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">writer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseVisualizer" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseVisualizer.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseVisualizer.append" title="Permalink to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#collapsedetect.detector.CollapseVisualizer.append" title="collapsedetect.detector.CollapseVisualizer.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CollapseVisualizer.append()</span></code></a> will append the data into <cite>.store</cite> as that in <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.append" title="collapsedetect.detector.CollapseDetector.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CollapseDetector.append()</span></code></a>.
+It will also add the data into histogram of tensorboard, tagged with <a class="reference internal" href="#collapsedetect.detector.CollapseVisualizer.tag" title="collapsedetect.detector.CollapseVisualizer.tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseVisualizer.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#collapsedetect.detector.CollapseVisualizer.tag" title="Permalink to this definition">#</a></dt>
+<dd><p>default tag for appended data in tensorboard histogram view</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, JamzumSum.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
