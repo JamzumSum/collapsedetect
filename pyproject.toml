@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "collapsedetect"
-version = "0.1.0"
+version = "0.1.1"
 description = "Detect model collapse for PyTorch module"
 authors = ["JamzumSum <zzzzss990315@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/JamzumSum/collapsedetect"
+documentation = "https://jamzumsum.github.io/collapsedetect"
 
 [tool.poetry.dependencies]
 python = "3.7"

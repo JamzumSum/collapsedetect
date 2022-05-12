@@ -70,6 +70,33 @@ class CollapseDetector:
 
             :external+torch:meth:`torch.nn.Module.register_forward_pre_hook`
             :external+torch:meth:`torch.nn.Module.register_forward_hook`
+
+        Example1:
+
+        >>> resnet = get_resnet18()     # This is a module with single output
+        >>> det = CollapseDetector()
+        >>> det.hook(resnet)
+        >>> for _ in range(15): resnet(image)
+        >>> det.detect()
+        False
+
+        Example2: pre=True
+
+        >>> trainer = get_trainer()     # This is a trainer with network and loss module
+        >>> trainer.criterion           # This is a module with single input
+        mybug.TripletLoss
+        >>> det = CollapseDetector()
+        >>> det.hook(trainer.criterion, pre=True)   # Hook the input value, without caring where the input comes from
+        >>> det.rm_hook()
+
+        Example3: usage of `filter_fn`
+
+        >>> net = get_pair_net()     # This is a module that return two value: <vector, label>
+        >>> net(image)          # will return a tuple with two value
+        >>> (torch.Tensor(...), 1)
+        >>> det = CollapseDetector()
+        >>> det.hook(net, filter_fn=lambda t: t[0])     # filter_fn is a getter that unpacks the pair and returns the first part
+        >>> det.rm_hook()
         """
         assert self.handle is None, "hook can be called only once"
 
