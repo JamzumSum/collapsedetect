@@ -20,26 +20,32 @@ class CollapseDetector:
         self.store: List[T] = []
         """data store"""
         self.clear = self.store.clear
+        """Clear :obj:`.store`.
+        
+        :return: None
+        """
 
     def append(self, data: T):
         """Save the data into the store of the detector. Use :obj:`.clear` to clear all saved data.
         Use :obj:`.detect` to call :meth:`is_collapse` on saved data.
 
+        .. note:: `data` will be detached and transfered to cpu at once.
+
         :param data: data to be saved
         :return: self
         """
-        self.store.append(data)
+        self.store.append(data.detach().cpu())
         return self
 
     @final
     def detect(self, eps=1e-5, clear: bool = True) -> bool:
-        """Call :meth:`is_collapse` on the saved data. This will clear the :obj:`.store` by default.
+        """Call :meth:`~collapsedetect.is_collapse` on the saved data. This will clear the :obj:`.store` by default.
 
-        :param eps: as that in :meth:`is_collapse`.
+        :param eps: as that in :meth:`~collapsedetect.is_collapse`.
         :param clear: whether to clear the :obj:`.store` after detection, defaults to True.
         :return: whether saved data is collapse.
 
-        .. seealso:: :meth:`is_collapse`
+        .. seealso:: :meth:`~collapsedetect.is_collapse`
         """
         assert self.store, "nothing is inside detector!"
         r = is_collapse(*self.store, eps=eps)
@@ -136,8 +142,11 @@ class CollapseVisualizer(CollapseDetector):
     def append(self, data: T, **kw):
         """:meth:`CollapseVisualizer.append` will append the data into `.store` as that in :meth:`CollapseDetector.append`.
         It will also add the data into histogram of tensorboard, tagged with :obj:`.tag`.
+
+        .. seealso:: :external+torch:meth:`~torch.utils.tensorboard.writer.SummaryWriter.add_histogram`
         """
         tag = kw.get("tag") or self.tag
+        data = data.detach().cpu()
         self.writer.add_histogram(tag, data, **kw)
         return super().append(data)
 

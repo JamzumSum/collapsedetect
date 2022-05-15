@@ -32,6 +32,7 @@ release = "0.1.0"
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx.ext.githubpages",
 ]
@@ -51,6 +52,7 @@ language = "en"
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+autosummary_generate = True
 
 # -- Options for HTML output -------------------------------------------------
 

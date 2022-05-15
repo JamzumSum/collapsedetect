@@ -40,4 +40,3 @@ def test_visualizer(collapse_generator: Module):
 
     assert set(logdir.glob("events.out.tfevents.*")) - prev
     rmtree(logdir)
-    
