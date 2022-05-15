@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Detectors &#8212; collapsedetect 0.1.1 documentation</title>
+    <title>Detectors &#8212; collapsedetect 0.1.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -159,8 +159,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.append">
 <span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.append" title="Permalink to this definition">#</a></dt>
-<dd><p>Save the data into the store of the detector. Use <a class="reference external" href="https://pytorch.org/docs/stable/backends.html#clear" title="(in PyTorch v1.11.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a> to clear all saved data.
+<dd><p>Save the data into the store of the detector. Use <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.clear" title="collapsedetect.detector.CollapseDetector.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a> to clear all saved data.
 Use <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.detect" title="collapsedetect.detector.CollapseDetector.detect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detect</span></code></a> to call <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code> on saved data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><cite>data</cite> will be detached and transfered to cpu at once.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>data</strong> – data to be saved</p>
@@ -171,14 +175,25 @@ Use <a class="reference internal" href="#collapsedetect.detector.CollapseDetecto
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.clear" title="Permalink to this definition">#</a></dt>
+<dd><p>Clear <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="collapsedetect.detector.CollapseDetector.detect">
 <span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#collapsedetect.detector.CollapseDetector.detect" title="Permalink to this definition">#</a></dt>
-<dd><p>Call <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code> on the saved data. This will clear the <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> by default.</p>
+<dd><p>Call <a class="reference internal" href="core.html#collapsedetect.is_collapse" title="collapsedetect.is_collapse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code></a> on the saved data. This will clear the <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> by default.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eps</strong> – as that in <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code>.</p></li>
+<li><p><strong>eps</strong> – as that in <a class="reference internal" href="core.html#collapsedetect.is_collapse" title="collapsedetect.is_collapse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code></a>.</p></li>
 <li><p><strong>clear</strong> – whether to clear the <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.store" title="collapsedetect.detector.CollapseDetector.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a> after detection, defaults to True.</p></li>
 </ul>
 </dd>
@@ -188,7 +203,7 @@ Use <a class="reference internal" href="#collapsedetect.detector.CollapseDetecto
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code></p>
+<p><a class="reference internal" href="core.html#collapsedetect.is_collapse" title="collapsedetect.is_collapse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_collapse()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -268,6 +283,10 @@ before you register a new hook using the same detector.</p>
 <span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.11.0)"><span class="pre">torch.Tensor</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collapsedetect.detector.CollapseVisualizer.append" title="Permalink to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="#collapsedetect.detector.CollapseVisualizer.append" title="collapsedetect.detector.CollapseVisualizer.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CollapseVisualizer.append()</span></code></a> will append the data into <cite>.store</cite> as that in <a class="reference internal" href="#collapsedetect.detector.CollapseDetector.append" title="collapsedetect.detector.CollapseDetector.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CollapseDetector.append()</span></code></a>.
 It will also add the data into histogram of tensorboard, tagged with <a class="reference internal" href="#collapsedetect.detector.CollapseVisualizer.tag" title="collapsedetect.detector.CollapseVisualizer.tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag</span></code></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter.add_histogram" title="(in PyTorch v1.11.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_histogram()</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
